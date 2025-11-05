@@ -2,9 +2,9 @@
 INTEGRADOR FINAL - CONSOLIDACION COMPLETA DEL PROYECTO
 ============================================================================
 Directorio raiz: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10
-Fecha de generacion: 2025-11-05 00:12:28
-Total de archivos integrados: 18
-Total de directorios procesados: 3
+Fecha de generacion: 2025-11-05 00:29:45
+Total de archivos integrados: 17
+Total de directorios procesados: 2
 ============================================================================
 """
 
@@ -24,17 +24,14 @@ Total de directorios procesados: 3
 #   9. observer.py
 #   10. strategies.py
 #
-# DIRECTORIO: examples
-#   11. __init__.py
-#   12. demo.py
-#
 # DIRECTORIO: tests
-#   13. test_config.py
-#   14. test_demo_execution.py
-#   15. test_factory_and_notifications.py
-#   16. test_logger.py
-#   17. test_observer.py
-#   18. test_strategies_and_notifications.py
+#   11. test_config.py
+#   12. test_demo_execution.py
+#   13. test_factory_and_notifications.py
+#   14. test_logger.py
+#   15. test_main_execution.py
+#   16. test_observer.py
+#   17. test_strategies_and_notifications.py
 #
 
 
@@ -44,7 +41,7 @@ Total de directorios procesados: 3
 ################################################################################
 
 # ==============================================================================
-# ARCHIVO 1/18: __init__.py
+# ARCHIVO 1/17: __init__.py
 # Directorio: .
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\__init__.py
 # ==============================================================================
@@ -52,7 +49,7 @@ Total de directorios procesados: 3
 
 
 # ==============================================================================
-# ARCHIVO 2/18: buscar_paquete.py
+# ARCHIVO 2/17: buscar_paquete.py
 # Directorio: .
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\buscar_paquete.py
 # ==============================================================================
@@ -472,7 +469,7 @@ if __name__ == "__main__":
     sys.exit(main())
 
 # ==============================================================================
-# ARCHIVO 3/18: config.py
+# ARCHIVO 3/17: config.py
 # Directorio: .
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\config.py
 # ==============================================================================
@@ -577,7 +574,7 @@ class NotificationConfig:
         self._sms_config.update(config)
 
 # ==============================================================================
-# ARCHIVO 4/18: constantes.py
+# ARCHIVO 4/17: constantes.py
 # Directorio: .
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\constantes.py
 # ==============================================================================
@@ -599,7 +596,7 @@ STRATEGY_CRITICAL = "critical"
 LOG_FILE_PATH = "notifications.log"
 
 # ==============================================================================
-# ARCHIVO 5/18: demo.py
+# ARCHIVO 5/17: demo.py
 # Directorio: .
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\demo.py
 # ==============================================================================
@@ -813,7 +810,7 @@ if __name__ == "__main__":
 
 
 # ==============================================================================
-# ARCHIVO 6/18: logger.py
+# ARCHIVO 6/17: logger.py
 # Directorio: .
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\logger.py
 # ==============================================================================
@@ -891,7 +888,7 @@ class NotificationLogger:
             print(f"Error al limpiar logs: {e}")
 
 # ==============================================================================
-# ARCHIVO 7/18: main.py
+# ARCHIVO 7/17: main.py
 # Directorio: .
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\main.py
 # ==============================================================================
@@ -1112,7 +1109,7 @@ if __name__ == "__main__":
     main()
 
 # ==============================================================================
-# ARCHIVO 8/18: notifications.py
+# ARCHIVO 8/17: notifications.py
 # Directorio: .
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\notifications.py
 # ==============================================================================
@@ -1264,7 +1261,7 @@ NotificationFactory.register_notification(NOTIFICATION_TYPE_PUSH, PushNotificati
 NotificationFactory.register_notification(NOTIFICATION_TYPE_SMS, SMSNotification)
 
 # ==============================================================================
-# ARCHIVO 9/18: observer.py
+# ARCHIVO 9/17: observer.py
 # Directorio: .
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\observer.py
 # ==============================================================================
@@ -1442,7 +1439,7 @@ class EventManager:
             observer.update(event)
 
 # ==============================================================================
-# ARCHIVO 10/18: strategies.py
+# ARCHIVO 10/17: strategies.py
 # Directorio: .
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\strategies.py
 # ==============================================================================
@@ -1549,89 +1546,11 @@ class CriticalSMSStrategy(NotificationStrategy):
 
 
 ################################################################################
-# DIRECTORIO: examples
-################################################################################
-
-# ==============================================================================
-# ARCHIVO 11/18: __init__.py
-# Directorio: examples
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\examples\__init__.py
-# ==============================================================================
-
-
-
-# ==============================================================================
-# ARCHIVO 12/18: demo.py
-# Directorio: examples
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\examples\demo.py
-# ==============================================================================
-
-"""Módulo separado (examples/demo.py) que contiene las funciones de demostración y pruebas
-que antes vivían en `main.py`.
-
-Separar el código de demostración del entrypoint principal hace el proyecto
-más limpio y evita que `main.py` inflija ruido a la cobertura o a la
-integración continua.
-"""
-
-from config import NotificationConfig
-from observer import EventManager, User, Event
-from notifications import NotificationFactory
-from strategies import DailyEmailStrategy, RealtimePushStrategy, CriticalSMSStrategy
-from logger import NotificationLogger
-from constantes import (
-    NOTIFICATION_TYPE_EMAIL,
-    NOTIFICATION_TYPE_PUSH,
-    NOTIFICATION_TYPE_SMS,
-    EVENT_TYPE_NEW_CONTENT,
-    EVENT_TYPE_LIVE_EVENT,
-    EVENT_TYPE_SUBSCRIPTION_EXPIRY,
-)
-
-
-def test_singleton():
-    """Prueba el patron Singleton de NotificationConfig."""
-    print("=== Prueba de Singleton ===")
-    config1 = NotificationConfig()
-    config2 = NotificationConfig()
-    
-    if config1 is config2:
-        print("Singleton funciona correctamente: ambas instancias son la misma")
-    else:
-        raise Exception("Error: Singleton no funciona correctamente")
-    
-    print(f"Configuracion Email: {config1.get_email_config()['sender']}")
-    print(f"Configuracion Push: {config1.get_push_config()['api_endpoint']}")
-    print()
-
-
-def test_factory():
-    """Prueba el patron Factory Method."""
-    print("=== Prueba de Factory Method ===")
-    
-    email_notification = NotificationFactory.create_notification(NOTIFICATION_TYPE_EMAIL)
-    push_notification = NotificationFactory.create_notification(NOTIFICATION_TYPE_PUSH)
-    sms_notification = NotificationFactory.create_notification(NOTIFICATION_TYPE_SMS)
-    
-    print(f"Email Notification creada: {email_notification.__class__.__name__}")
-    """Este archivo ya no contiene la demo — su contenido fue movido a `main.py`.
-
-    Conservar un stub aquí evita errores si alguien intenta importar
-    `examples.demo` por compatibilidad. Ejecuta `python main.py` para lanzar
-    la demostración integrada.
-    """
-
-    def placeholder_examples_demo():
-        print("El demo fue movido a main.py. Ejecuta `python main.py`.")
-
-
-
-################################################################################
 # DIRECTORIO: tests
 ################################################################################
 
 # ==============================================================================
-# ARCHIVO 13/18: test_config.py
+# ARCHIVO 11/17: test_config.py
 # Directorio: tests
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\tests\test_config.py
 # ==============================================================================
@@ -1658,24 +1577,24 @@ def test_update_and_reflects_across_instances(tmp_path):
 
 
 # ==============================================================================
-# ARCHIVO 14/18: test_demo_execution.py
+# ARCHIVO 12/17: test_demo_execution.py
 # Directorio: tests
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\tests\test_demo_execution.py
 # ==============================================================================
 
-from examples import demo
+import importlib
 
 
 def test_run_demo_completes(capsys):
-    # Ejecuta la demo completa (es determinista en este repo) y verifica
-    # que finaliza con el mensaje esperado.
-    demo.run_demo()
+    # Ejecuta la demo integrada en main.py y verifica que finaliza correctamente.
+    main = importlib.import_module('main')
+    main.run_demo()
     captured = capsys.readouterr()
     assert "DEMO COMPLETADO EXITOSAMENTE" in captured.out
 
 
 # ==============================================================================
-# ARCHIVO 15/18: test_factory_and_notifications.py
+# ARCHIVO 13/17: test_factory_and_notifications.py
 # Directorio: tests
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\tests\test_factory_and_notifications.py
 # ==============================================================================
@@ -1719,7 +1638,7 @@ def test_factory_register_custom(tmp_path, capsys):
 
 
 # ==============================================================================
-# ARCHIVO 16/18: test_logger.py
+# ARCHIVO 14/17: test_logger.py
 # Directorio: tests
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\tests\test_logger.py
 # ==============================================================================
@@ -1741,7 +1660,31 @@ def test_logger_write_read_and_clear(tmp_path):
 
 
 # ==============================================================================
-# ARCHIVO 17/18: test_observer.py
+# ARCHIVO 15/17: test_main_execution.py
+# Directorio: tests
+# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\tests\test_main_execution.py
+# ==============================================================================
+
+import importlib
+
+
+def test_main_runs_and_outputs_complete_message(capsys):
+    # Import main module freshly to ensure functions are available
+    main = importlib.import_module('main')
+
+    # Run main (which delegates to run_demo) and capture stdout
+    main.main()
+
+    captured = capsys.readouterr()
+    out = captured.out
+
+    # Check for key strings printed by the demo
+    assert "Iniciando demo de notificaciones StreamNow" in out
+    assert "DEMO COMPLETADO EXITOSAMENTE" in out
+
+
+# ==============================================================================
+# ARCHIVO 16/17: test_observer.py
 # Directorio: tests
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\tests\test_observer.py
 # ==============================================================================
@@ -1778,7 +1721,7 @@ def test_unsubscribed_user_not_receive(capsys):
 
 
 # ==============================================================================
-# ARCHIVO 18/18: test_strategies_and_notifications.py
+# ARCHIVO 17/17: test_strategies_and_notifications.py
 # Directorio: tests
 # Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\tests\test_strategies_and_notifications.py
 # ==============================================================================
@@ -1803,6 +1746,6 @@ def test_change_strategy_and_send(capsys):
 
 ################################################################################
 # FIN DEL INTEGRADOR FINAL
-# Total de archivos: 18
-# Generado: 2025-11-05 00:12:28
+# Total de archivos: 17
+# Generado: 2025-11-05 00:29:45
 ################################################################################

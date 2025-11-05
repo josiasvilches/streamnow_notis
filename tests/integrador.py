@@ -1,12 +1,12 @@
 """
 Archivo integrador generado automaticamente
 Directorio: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\tests
-Fecha: 2025-11-05 00:12:28
-Total de archivos integrados: 6
+Fecha: 2025-11-05 00:29:45
+Total de archivos integrados: 7
 """
 
 # ================================================================================
-# ARCHIVO 1/6: test_config.py
+# ARCHIVO 1/7: test_config.py
 # Ruta: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\tests\test_config.py
 # ================================================================================
 
@@ -32,23 +32,23 @@ def test_update_and_reflects_across_instances(tmp_path):
 
 
 # ================================================================================
-# ARCHIVO 2/6: test_demo_execution.py
+# ARCHIVO 2/7: test_demo_execution.py
 # Ruta: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\tests\test_demo_execution.py
 # ================================================================================
 
-from examples import demo
+import importlib
 
 
 def test_run_demo_completes(capsys):
-    # Ejecuta la demo completa (es determinista en este repo) y verifica
-    # que finaliza con el mensaje esperado.
-    demo.run_demo()
+    # Ejecuta la demo integrada en main.py y verifica que finaliza correctamente.
+    main = importlib.import_module('main')
+    main.run_demo()
     captured = capsys.readouterr()
     assert "DEMO COMPLETADO EXITOSAMENTE" in captured.out
 
 
 # ================================================================================
-# ARCHIVO 3/6: test_factory_and_notifications.py
+# ARCHIVO 3/7: test_factory_and_notifications.py
 # Ruta: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\tests\test_factory_and_notifications.py
 # ================================================================================
 
@@ -91,7 +91,7 @@ def test_factory_register_custom(tmp_path, capsys):
 
 
 # ================================================================================
-# ARCHIVO 4/6: test_logger.py
+# ARCHIVO 4/7: test_logger.py
 # Ruta: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\tests\test_logger.py
 # ================================================================================
 
@@ -112,7 +112,30 @@ def test_logger_write_read_and_clear(tmp_path):
 
 
 # ================================================================================
-# ARCHIVO 5/6: test_observer.py
+# ARCHIVO 5/7: test_main_execution.py
+# Ruta: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\tests\test_main_execution.py
+# ================================================================================
+
+import importlib
+
+
+def test_main_runs_and_outputs_complete_message(capsys):
+    # Import main module freshly to ensure functions are available
+    main = importlib.import_module('main')
+
+    # Run main (which delegates to run_demo) and capture stdout
+    main.main()
+
+    captured = capsys.readouterr()
+    out = captured.out
+
+    # Check for key strings printed by the demo
+    assert "Iniciando demo de notificaciones StreamNow" in out
+    assert "DEMO COMPLETADO EXITOSAMENTE" in out
+
+
+# ================================================================================
+# ARCHIVO 6/7: test_observer.py
 # Ruta: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\tests\test_observer.py
 # ================================================================================
 
@@ -148,7 +171,7 @@ def test_unsubscribed_user_not_receive(capsys):
 
 
 # ================================================================================
-# ARCHIVO 6/6: test_strategies_and_notifications.py
+# ARCHIVO 7/7: test_strategies_and_notifications.py
 # Ruta: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10\tests\test_strategies_and_notifications.py
 # ================================================================================
 

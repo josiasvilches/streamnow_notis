@@ -1,7 +1,7 @@
 """
 Archivo integrador generado automaticamente
 Directorio: C:\Josias\UM\3ro\DisenoSistemas\parcial 29-10
-Fecha: 2025-11-05 00:12:28
+Fecha: 2025-11-05 00:29:45
 Total de archivos integrados: 10
 """
 
