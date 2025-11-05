@@ -1,5 +1,5 @@
 
-# StreamNow — Sistema de notificaciones
+# StreamNow — Sistema de notificaciones - Josías Vilches
 
 Este repositorio contiene una implementación didáctica de un sistema de notificaciones inspirado en una plataforma de streaming. El objetivo es demostrar patrones de diseño (Singleton, Factory Method, Observer, Strategy) y proporcionar un conjunto de pruebas unitarias.
 
