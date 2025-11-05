@@ -1,0 +1,3 @@
+# Dependencias de desarrollo / pruebas (agrega más si el proyecto lo requiere)
+pytest>=7.0
+pytest-cov>=4.0

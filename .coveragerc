@@ -1,3 +1,9 @@
 [run]
 omit =
-    main.py
+	buscar_paquete.py
+	demo.py
+	integrador.py
+	integradorFinal.py
+	examples/*
+	tests/*
+
